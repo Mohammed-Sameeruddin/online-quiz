@@ -1,0 +1,25 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.container h1{
+    text-align:left;
+}
+.container h5 {
+    margin-left:20px;
+}
+.container input {
+    margin-left:25px;
+    background-color:blue;
+    color:white;
+}
+#options {
+    margin:10px;
+    font-size:20px;
+}
+#result {
+    text-align:center;
+    color:red;
+    font-family:sans-serif;
+}

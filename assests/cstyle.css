@@ -1,0 +1,54 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box
+}
+h3{
+    margin-top:120px;
+    text-align: center;
+}
+
+input[type=text],[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color:tomato;
+    color: white;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:70px;
+    padding-right:70px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align:center;
+    font-family:sans-serif;
+    font-size:20px;
+  }
+  
+  input[type=submit]:hover {
+    background-color:rgb(214, 80, 56);
+  }
+  
+  .container {
+    background-color:white;
+    margin-top:120px;
+    width:500px;
+    border:2px solid rgb(136, 51, 36);
+    padding:10px;
+    border-radius:10px;
+  }
+  .container h4 {
+    text-align: center;
+    color:tomato;
+    font-family: sans-serif;
+    font-size:30px;
+  }

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'cstyle.css' %}">
+    <title>Contact</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark  bg-danger">
+        <a class="navbar-brand" href="#">Online Quiz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/instructions">Instructions</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{user.username}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/profile">View Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/accounts/logout">Logout</a>
+              </div>
+            </li>
+
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/accounts/login">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav> 
+      <div>
+  
+      </div>
+        <div class="container text-center">
+          <h4>Contact</h4>
+          <form action="/send/" method="POST">
+            {% csrf_token %}
+  
+            <input type="text" id="fname" name="username" placeholder="username" value={{user.username}}>
+        
+          
+            <input type="email" id="lname" name="email" placeholder="email">
+ 
+      
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        
+            <input type="submit" value="send message">
+          </form>
+          <div >
+          {% for message in messages %}
+          <h5>{{message}}</h5>
+          {% endfor %}
+          </div>
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="path/to/boostrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
